@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+<title>Colin's Search Engine</title>
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/all.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+	<section class="hero is-warning is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+          </a>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active" onclick="sendToSearchEngine()">
+              Search Engine
+            </a>
+            <a class="navbar-item" onclick="sendToHistory()">
+              History
+            </a>
+            <a class="navbar-item" onclick="sendToIndex()">
+              Index
+            </a>
+            <span class="navbar-item">
+              <a class="button is-black has-background-white is-inverted" onclick="sendToGitHub()">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+<script>
+	function sendToSearchEngine() {
+		window.open("http://localhost:8080/", "_self");
+	}
+	function sendToHistory() {
+		window.open("http://localhost:8080/history", "_self");
+	}
+	function sendToIndex() {
+		window.open("http://localhost:8080/index", "_self");
+	}
+	function sendToGitHub() {
+		window.open("https://github.com/usf-cs272-spring2022/project-ColinBindi");
+	}
+</script>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title is-size-1">
+        BadaBing!
+      </p>
+      <p class="subtitle is-size-5">
+        BadaBoom!
+      </p>
+    </div>
+  </div>
+</section>
+		<form class="box" method="post" action="/reverse">
+		<div class="container has-text-left is-size-1">
+	      <p class="title is-size-1">
+	        Reverse Order
+	      </p>
+	      </div>
+		<br>
+	  <div class="field">
+	    <div class="control">
+	      <input class="input" name="queries" placeholder="Reverse Search Here">
+	    </div>
+	  </div>
+	  <button class="button is-warning" name="search">Search</button>
+	  <button class="button is-black" name="options">Options</button>
+	  <div class="has-text-centered has-text-weight-bold	">
+         <p> ${stats} </p>
+   	</div>
+	</form>
+   	<div class="has-text-left"><form method="post" action="/reverse">
+	<div class="hero-body">
+         <p> ${text} </p>
+    </div>
+   	</form></div>
+</body>
+</html>
